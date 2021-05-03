@@ -45,10 +45,6 @@ describe("POST /dataFiles", () => {
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200,done)
-      // .end((err: any) => {
-      //   if (err) return done(err);
-      //   done();
-      // });
   });
 });
 
@@ -64,10 +60,6 @@ describe("PUT /dataFiles/:id", () => {
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200, done)
-      // .end((err: Error) => {
-      //   if (err) return done(err);
-      //   return done();
-      // });
   });
 });
 
@@ -78,9 +70,5 @@ describe("DELETE /dataFiles/:id", () => {
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
       .expect(200, done)
-      // .end((err: Error) => {
-      //   if (err) return done(err);
-      //   return done();
-      // });
   });
 });
