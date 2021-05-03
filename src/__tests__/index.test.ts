@@ -1,8 +1,8 @@
-const request = require('supertest');
+const request = require("supertest");
 
-const app = require('../index');
+let app = require("../index");
 
-const dataFiles = require("../database/database.json");
+let dataFiles = require("../database/database.json");
 
 // beforeEach(() => {
 //   app = require("../index");
@@ -11,8 +11,7 @@ const dataFiles = require("../database/database.json");
 afterEach(() => {
   app.close();
 });
-describe('GET /dataFiles', () => {
-
+describe("GET /dataFiles", () => {
   test("respond with json containing a list of all dataFiles", function (done) {
     request(app)
       .get("/dataFiles")
@@ -44,9 +43,39 @@ describe("POST /dataFiles", () => {
       .send(data)
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
-      .expect(200,done)
+      .expect(200, done);
+    // .end((err: any) => {
+    //   if (err) return done(err);
+    //   done();
+    // });
   });
 });
+// describe('POST /dataFiles', () => {
+
+//   let data = {
+//     "organization": "Dotun and Elias Limited",
+//     "products": ["java", "python"],
+//     "marketValue": "100%",
+//     "address": "Decagon",
+//     "ceo": "both",
+//     "country": "Nigeria",
+//     "noOfEmployees": 2,
+//     "employees": ["Dotun", "Elias"]
+//   };
+
+//   test('Responds with json with the created dataFile', function(done) {
+//     request(app)
+//       .post('/dataFiles')
+//       .send(data)
+//       .set('Accept', 'application/json')
+//       .expect('Content-Type', /json/)
+//       .expect(200)
+//       .end((err: Error) => {
+//         if (err) return done(err);
+//         return done();
+//       });
+//   });
+// });
 
 describe("PUT /dataFiles/:id", () => {
   let data = {
@@ -59,7 +88,11 @@ describe("PUT /dataFiles/:id", () => {
       .send(data)
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
-      .expect(200, done)
+      .expect(200, done);
+    // .end((err: Error) => {
+    //   if (err) return done(err);
+    //   return done();
+    // });
   });
 });
 
@@ -69,6 +102,37 @@ describe("DELETE /dataFiles/:id", () => {
       .delete(`/dataFiles/${parseInt(dataFiles[dataFiles.length - 1].id)}`)
       .set("Accept", "application/json")
       .expect("Content-Type", /json/)
-      .expect(200, done)
+      .expect(200, done);
+    // .end((err: Error) => {
+    //   if (err) return done(err);
+    //   return done();
+    // });
   });
 });
+
+// describe('GET /dataFiles', () => {
+//   // beforeEach(() => { app = require('../index'); });
+//   // afterEach(() => { app.close(); });
+
+//     // it('respond with json containing a list of all data',  async ()=> {
+//     //   const res = await request(app).get('/');
+//     //   expect(res.status).toBe(200);
+//     //   expect(res.body).toBe('Hello World')
+//     //   // expect(1).toBe(1);
+//     // });
+
+//   // it('respond with json containing a list of all dataFiles', function (done) {
+//   //       request(app)
+//   //           .get('/dataFiles')
+//   //           .set('Accept', 'application/json')
+//   //           .expect('Content-Type', /json/)
+//   //           .expect(200, done);
+//   //   });
+
+//   // test("It should response the GET method", () => {
+//   //   return request(app)
+//   //     .get("/")
+//   //     .expect(200);
+//   // });
+
+//   });

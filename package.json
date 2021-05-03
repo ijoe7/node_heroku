@@ -7,6 +7,12 @@
     "start": "tsc && node dist/index.js",
     "test": "jest --verbose"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
