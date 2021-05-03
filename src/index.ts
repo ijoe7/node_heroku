@@ -69,25 +69,6 @@ app.put('/dataFiles/:id', (req: Request, res: Response) => {
   const dataFile = dataFiles.find((item: List) => item.id === parseInt(req.params.id));
   if (!dataFile) return res.status(404).send(`Data with the id: ${parseInt(req.params.id)} not found!`)
 
-  // Validate
-  // If invalid, return 400 - Bad request
-  // const schema = {
-  //   organization: Joi.string().min(1),
-  //   products: [Joi.string()],
-  //   marketValue: Joi.string().min(1),
-  //   address: Joi.string().min(1),
-  //   ceo: Joi.string().min(1),
-  //   country: Joi.string().min(1),
-  //   noOfEmployees: Joi.number().min(0),
-  //   employees: [Joi.string()],
-  // };
-
-  // const result = Joi.validate(req.body, schema);
-  // if (result.error) {
-  //   res.status(400).send(result.error.details[0].message);
-  //   return;
-  // }
-
   // Update dataFile
   const dataStructure: List = {
     organization: req.body.organization || dataFile.organization,

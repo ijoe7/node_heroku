@@ -45,30 +45,6 @@ describe("POST /dataFiles", function () {
         // });
     });
 });
-// describe('POST /dataFiles', () => {
-//   let data = {
-//     "organization": "Dotun and Elias Limited",
-//     "products": ["java", "python"],
-//     "marketValue": "100%",
-//     "address": "Decagon",
-//     "ceo": "both",
-//     "country": "Nigeria",
-//     "noOfEmployees": 2,
-//     "employees": ["Dotun", "Elias"]
-//   };
-//   test('Responds with json with the created dataFile', function(done) {
-//     request(app)
-//       .post('/dataFiles')
-//       .send(data)
-//       .set('Accept', 'application/json')
-//       .expect('Content-Type', /json/)
-//       .expect(200)
-//       .end((err: Error) => {
-//         if (err) return done(err);
-//         return done();
-//       });
-//   });
-// });
 describe("PUT /dataFiles/:id", function () {
     var data = {
         address: "lalaland",
@@ -100,25 +76,3 @@ describe("DELETE /dataFiles/:id", function () {
         // });
     });
 });
-// describe('GET /dataFiles', () => {
-//   // beforeEach(() => { app = require('../index'); });
-//   // afterEach(() => { app.close(); });
-//     // it('respond with json containing a list of all data',  async ()=> {
-//     //   const res = await request(app).get('/');
-//     //   expect(res.status).toBe(200);
-//     //   expect(res.body).toBe('Hello World')
-//     //   // expect(1).toBe(1);
-//     // });
-//   // it('respond with json containing a list of all dataFiles', function (done) {
-//   //       request(app)
-//   //           .get('/dataFiles')
-//   //           .set('Accept', 'application/json')
-//   //           .expect('Content-Type', /json/)
-//   //           .expect(200, done);
-//   //   });
-//   // test("It should response the GET method", () => {
-//   //   return request(app)
-//   //     .get("/")
-//   //     .expect(200);
-//   // });
-//   });
